@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>step03_02</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <h1>システムっぽい動作（応用02）</h1>
+    <p>下記のような動作をするコードを書きましょう。
+        ただし、<strong style="color:red">Deferredのthenを結合して書いて下さい。</strong>
+    </p>
+    <ul>
+        <li>画面には「吾輩は夏目漱石である」「吾輩は東野圭吾である」のラジオボタンを作ります。</li>
+        <li>ラジオボタンをどちらか選択してから「データ取得」ボタンを押すと通信が開始されます</li>
+        <li>user.jsonを取得します。userのID、名前、年齢、職業を表示します</li>
+        <li>user.jsonを取得した後、含まれるidの値からworksのURLを作ってworks.jsonを取得します。worksからID、作品名を列挙します。</li>
+        <li>通信中には画面のどこかに「通信中…」と表示し、通信が終わったら消して下さい</li>
+    </ul>
+
+    <h3>解答</h3>
+    <div>
+        <!-- どんな構造にするかも宿題とします -->
+    </div>
+    <script>
+        //ここにコードを書く
+    </script>
+
+    <h3>回答のヒント「thenを結合する、というのはこういうことです」（コードを見て下さい）</h3>
+    <script>
+        $(function(){
+            //一回目の通信開始
+            $.ajax({
+                url: 'index.html'
+            }).then(function(){
+                console.log('first');
+                //一回目の通信が終わったら二回目の通信開始
+                return $.ajax({
+                    url: 'index.html'
+                })
+            }).then(function(){
+                //二回目の通信が終わったら呼ばれます。
+                console.log('second');
+                alert('二回index.htmlを取ってきました！')
+            });
+        });
+    </script>
+
+
+</body>
+</html>

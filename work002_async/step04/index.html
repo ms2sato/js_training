@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>step04</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <h1>エラー時の動作</h1>
+    <p>下記のような動作をするコードを書きましょう（動作はstep03と同じです）。
+        ただし、<strong style="color:red">エラーの時は、「通信中…」の表示を消して「エラーです！」と出します。
+        （「エラー動作を確認するにはどうしたら良いか」も考えて下さい）</strong>
+    </p>
+    <ul>
+        <li>画面には「吾輩は夏目漱石である」「吾輩は東野圭吾である」のラジオボタンを作ります。</li>
+        <li>ラジオボタンをどちらか選択してから「データ取得」ボタンを押すと通信が開始されます</li>
+        <li>user.jsonを取得します。userのID、名前、年齢、職業を表示します</li>
+        <li>user.jsonを取得した後、含まれるidの値からworksのURLを作ってworks.jsonを取得します。worksからID、作品名を列挙します。</li>
+        <li>通信中には画面のどこかに「通信中…」と表示し、通信が終わったら消して下さい</li>
+    </ul>
+
+    <h3>解答</h3>
+    <div>
+        <!-- どんな構造にするかも宿題とします -->
+    </div>
+    <script>
+        //ここにコードを書く
+    </script>
+
+    <h3>回答のヒント「例えば404エラーの場合」（コードを見て下さい）</h3>
+    <script>
+        $(function(){
+            //一回目の通信開始
+            $.ajax({
+                url: 'unexpected_url_this_is_not_exist'
+            }).then(function(){
+                //正常時の動作（ここには来ない）
+            },
+            function(xhr){
+                alert(xhr.statusText + '(' + xhr.status + ')');
+            });
+        });
+    </script>
+
+
+</body>
+</html>

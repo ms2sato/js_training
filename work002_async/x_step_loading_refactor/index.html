@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>x_step_loading_refactor</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+<h1>Deferredでloadingを簡単にする</h1>
+<p>下記のような動作をするコードを書きましょう。</p>
+<ul>
+    <li>../data/user01.jsonを取得します。userのID、名前、年齢、職業を表示します</li>
+    <li>通信中には画面のどこかに「通信中…」と表示し、通信が終わったら消して下さい</li>
+    <li>../data/works02.jsonを取得します。worksからID、作品名を列挙します。</li>
+    <li>通信中には画面のどこかに「通信中…」と表示し、通信が終わったら消して下さい</li>
+</ul>
+<p>
+    ただし、通信中の表記をするのに<strong style="color:red">
+    以下の仕様を満たすloadingというメソッドと書いて利用して下さい。</strong>
+</p>
+
+<script>
+    function loading(deferred){
+        //この中をどうしたらいい？
+        return deferred; //何もしないならこれで良い。このままではダメ。
+    }
+
+    // loadingの使い方（通信が始まったら「通信中...」と表示されて、終わったら消える動作になるようにする）
+    loading($.ajax({
+        url: '../data/user01.json'
+    }));
+</script>
+
+
+<h3>解答</h3>
+<div>
+    <!-- どんな構造にするかも宿題とします -->
+</div>
+<script>
+    //ここにコードを書く
+</script>
+
+</body>
+</html>
