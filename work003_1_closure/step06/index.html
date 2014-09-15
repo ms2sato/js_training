@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>step06</title>
+</head>
+<body>
+<h1>クロージャーの基本</h1>
+<p>
+    下記は肉まんが二回表示されますが、コメントの部分で出来るだけ小さな変更をして二回目のfusionの呼び出しであんマンと表示して下さい。
+    書いたコードがなぜそのような動作になるか説明して下さい。
+</p>
+
+<script>
+
+    var niku = '肉';
+    var man = 'まん';
+
+    function fusion(){
+        console.log(niku + man);
+    }
+
+    fusion();
+
+    // ここに出来るだけ小さな変更を加えて次のfusionで「あんまん」と表示して下さい
+
+    fusion();
+
+
+</script>
+
+<p>
+    <!-- ここに理由を説明する -->
+</p>
+
+</body>
+</html>

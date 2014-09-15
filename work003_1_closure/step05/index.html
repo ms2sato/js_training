@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>step05</title>
+</head>
+<body>
+<h1>スコープ</h1>
+<p>
+    元あったコードにしげお君が手を加えたところ、年齢が妙な数になってしまいました。
+    このバグを修正して下さい。正しい出力は下記です。
+    正解が複数あるので思いつく限り書いて下さい。
+</p>
+    <pre>
+元あったコード
+[私の年齢は]21
+さとう君が変更したあとのコード
+[Say!]アゲ:0
+[Say!]アゲ:1
+[私の年齢は]21
+    </pre>
+
+<script>
+    console.log('元あったコード');
+    var age = 20;
+    age++;
+    console.log('[私の年齢は]' + age);
+</script>
+
+<script>
+    console.log('さとう君が変更したあとのコード');
+    var age = 20;
+
+    // さとう君が書いたコード（このロジック自体はいじらないこと）
+    for(var i = 0; i < 2; ++i){
+        var age = 'アゲ';
+        console.log('[Say!]' + age + ':' + i);
+    }
+    // さとう君のコードはここまで（このロジック自体はいじらないこと）
+
+    age++;
+    console.log('[私の年齢は]' + age);
+
+</script>
+
+</body>
+</html>

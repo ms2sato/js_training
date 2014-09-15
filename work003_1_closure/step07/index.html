@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>step07</title>
+</head>
+<body>
+<h1>クロージャー</h1>
+<p>
+    関数を配列に入れておいて、後で順番に実行したら、3しか出力されませんでした。この理由を説明して下さい。
+    また、1、2、3と出力するにはどうしたら良いでしょうか。
+</p>
+
+<script>
+
+    var writerFunctions = [];
+    for(var i = 0; i < 3; ++i){
+        writerFunctions.push(function(){
+            console.log('出力:');
+            console.log(i);
+        });
+    }
+
+    // ここから下はいじらない事
+    for(var j = 0; j < writerFunctions.length; ++j){
+        var writerFunc = writerFunctions[j];
+        writerFunc();
+    }
+
+</script>
+
+<p>
+    <!-- ここに理由を説明する -->
+</p>
+
+</body>
+</html>
