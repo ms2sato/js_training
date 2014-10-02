@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>step02</title>
+    <!-- (1) -->
+</head>
+<body>
+<h1>クラス（的なもの）入門 2</h1>
+<p>下記のように呼び出せる型を作成しましょう。ゼミでやったように厳密にはクラスでは無いですが、便宜上クラスと呼ぶことにします。
+また、JavaScriptを外部ファイル ./js/main.js で記述して呼び出して下さい。上記の(1)の部分に呼び出しタグを書きましょう。</p>
+
+<script>
+    var c = new ConsoleLogger('【', '】'); // ConsoleLoggerがコンストラクタです。
+    c.log('JavaScript最高！'); // logメソッドがあります。このコードの結果、コンソールに「【JavaScript最高！】」と表示されます。
+    c.log('本日は晴天なり'); // このコードの結果、コンソールに「【本日は晴天なり】」と表示されます。
+
+    var c2 = new ConsoleLogger('v', '/'); // ConsoleLoggerがコンストラクタです。
+    c.log('(・-・)'); // logメソッドがあります。このコードの結果、コンソールに「v(・-・)/」と表示されます。
+</script>
+
+
+<p>ヒント：クラスの作り方の基本</p>
+<script>
+
+    function TestClass(arg){
+        this.test = arg;
+    }
+
+    TestClass.prototype.testMethod = function(){
+       alert('テストです' + this.test);
+    };
+
+    var test = new TestClass('!');
+    test.testMethod();//'てすとです!'とalertされます
+
+</script>
+
+
+</body>
+</html>
