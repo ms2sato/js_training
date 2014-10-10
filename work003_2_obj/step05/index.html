@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf8">
     <title>step05</title>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <!-- (1) -->
 </head>
 <body>
@@ -13,48 +12,45 @@
     <strong>必要な外部ファイルが有れば自由に記述して構いません。</strong></p>
 
 <script>
-    $(function(){
-        (function(){
-            var uc = new UserConnector('../data/user01.json', true); // trueはデバッグモード
+    (function(){
+        var uc = new UserConnector('../data/user01.json', true); // trueはデバッグモード
 
-            // ../data/user01.json へ通信して、データを取得してきます
-            uc.connect().then(function(){
+        // ../data/user01.json へ通信して、データを取得してきます
+        uc.connect().then(function(){
 
-                uc.output();
-                /* 下記のように表示される
-                 Object {id: 1, name: "夏目漱石", age: 56, job: "小説家"}
-                 */
+            uc.output();
+            /* 下記のように表示される
+             Object {id: 1, name: "夏目漱石", age: 56, job: "小説家"}
+             */
 
+        });
+
+    })();
+
+    (function(){
+        var uc = new UserConnector('../data/user01.json'); // trueでなければ本番モード
+
+        // ../data/user01.json へ通信して、データを取得してきます
+        uc.connect().then(function(){
+
+            uc.output();
+            /* 下にあるuser01のdivタグの中に下記のように要素を追加します。
+             <div id="user01">
+             <div>名前:夏目漱石</div>
+             <div>年齢:56</div>
+             <div>職業:小説家</div>
+             </div>
+             */
+
+            // ちょっとむずかしいかも？
+            uc.getValues(function(){
+                //ここのthisはどんなものであれば良いでしょうか。
+                console.log(this.name); //コンソールに 夏目漱石と表示されます。
             });
 
-        })();
+        });
 
-        (function(){
-            var uc = new UserConnector('../data/user01.json'); // trueでなければ本番モード
-
-            // ../data/user01.json へ通信して、データを取得してきます
-            uc.connect().then(function(){
-
-                uc.output();
-                /* 下にあるuser01のdivタグの中に下記のように要素を追加します。
-                 <div id="user01">
-                 <div>名前:夏目漱石</div>
-                 <div>年齢:56</div>
-                 <div>職業:小説家</div>
-                 </div>
-                 */
-
-                // ちょっとむずかしいかも？
-                uc.getValues(function(){
-                    //ここのthisはどんなものであれば良いでしょうか。
-                    console.log(this.name); //コンソールに 夏目漱石と表示されます。
-                });
-
-            });
-
-        })();
-    });
-
+    })();
 
 </script>
 <div id="user01"></div>
