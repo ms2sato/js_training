@@ -32,7 +32,6 @@
         };
 
         //ここにコードを書く
-//        document.write("ID: ", id);
         document.write("ID: ", user01['id'], "<br>");
         document.write("名前: ", user01['name'], "<br>");
         document.write("年齢: ", user01['age'], "<br>");
@@ -83,7 +82,9 @@
             "name": "三四郎"
         }];
 
-        //ここにコードを書く
+        for(var i=0;i<5;i++){
+            document.write(works01[i].id, ' ',works01[i].name, "<br>");
+        }
     </script>
 
 </body>
