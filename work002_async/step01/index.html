@@ -32,11 +32,12 @@
         };
 
         //ここにコードを書く
-        var ele = document.createElement("div");
-        var str = document.createTextNode("ID: " + user01['id']);
-        ele.appendChild(str);
-        document.body.appendChild(ele);
+        $("#user01").append("<div>" + "ID: " + (user01['id']) + "</div>")
+        $("#user01").append("<div>" + "名前: " + (user01['name']) + "</div>")
+        $("#user01").append("<div>" + "年齢: " + (user01['age']) + "</div>")
+        $("#user01").append("<div>" + "職業: " + (user01['job']) + "</div>")
     </script>
+
 
 
     <h2>Q2: 複数のデータの表示</h2>
