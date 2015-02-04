@@ -83,8 +83,9 @@
             "name": "三四郎"
         }];
 
-        for(var i=0;i<5;i++){
-            document.write(works01[i].id, ' ',works01[i].name, "<br>");
+        //ここにコードを書く
+        for(var i=0;i<5;i++) {
+            $("#works01").append("<tr><td>" + works01[i].id + "</td><td>" + works01[i].name + "</td></tr>")
         }
     </script>
 
