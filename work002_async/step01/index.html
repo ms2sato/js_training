@@ -32,7 +32,12 @@
         };
 
         //ここにコードを書く
+        $("#user01").append("<div>" + "ID: " + (user01['id']) + "</div>")
+        $("#user01").append("<div>" + "名前: " + (user01['name']) + "</div>")
+        $("#user01").append("<div>" + "年齢: " + (user01['age']) + "</div>")
+        $("#user01").append("<div>" + "職業: " + (user01['job']) + "</div>")
     </script>
+
 
 
     <h2>Q2: 複数のデータの表示</h2>
@@ -79,6 +84,9 @@
         }];
 
         //ここにコードを書く
+        for(var i=0;i<5;i++) {
+            $("#works01").append("<tr><td>" + works01[i].id + "</td><td>" + works01[i].name + "</td></tr>")
+        }
     </script>
 
 </body>
